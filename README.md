@@ -1,0 +1,2 @@
+# camel
+EMF Camel Whiteboard
