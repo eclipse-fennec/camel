@@ -91,7 +91,7 @@ This project uses the Gecko EMF OSGi Framework (https://github.com/geckoprojects
 
 For EMF projects, add to `bnd.bnd`:
 ```
--library: enable-emf
+-library: enableEMF
 ```
 This automatically adds the necessary EMF dependencies.
 
@@ -130,7 +130,7 @@ The project implements a configuration-driven Camel pipeline system with:
 ### Working with EMF Models
 1. Edit `.ecore` files to define your domain model
 2. Configure `.genmodel` files with appropriate generation settings
-3. Add `-library: enable-emf` to `bnd.bnd` for EMF support
+3. Add `-library: enableEMF` to `bnd.bnd` for EMF support
 4. Use the `-generate` instruction in `bnd.bnd` to trigger code generation
 5. Generated code goes to `src-gen/`, custom code to `src/`
 
@@ -362,7 +362,7 @@ The `org.apache.camel` project provides a stable, proven working example of Apac
 ### Build Configuration
 
 The bundle uses a streamlined build configuration:
-- **EMF Library**: `-library: enable-emf` for automatic EMF dependencies
+- **EMF Library**: `-library: enableEMF` for automatic EMF dependencies
 - **Camel OSGi Dependencies**: Full Apache Camel 4.10+ OSGi integration including `camel-core-osgi`
 - **Dynamic Import**: `DynamicImport-Package: *` for flexible OSGi package resolution
 

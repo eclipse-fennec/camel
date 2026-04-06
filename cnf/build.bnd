@@ -1,29 +1,55 @@
-# We include setups for
-#	OSGi-Test Support - gecko-osgitest
-#	DIMC Github-Configuration - gecko-dimc
-#	Jacoco Support - gecko-jacoco
+-include: ${workspace}/gradle.properties
+Bundle-Developers: \
+    jalbert; \
+        email="j.albert@datainmotion.com"; \
+        name="Juergen Albert"; \
+        organization="Data In Motion"; \
+        organizationUrl="https://datainmotion.com"; \
+        roles="architect,developer", \
+    mhoffmann; \
+        name="Mark Hoffmann"; \
+        email="m.hoffmann@datainmotion.com"; \
+        url="https://www.datainmotion.com"; \
+        organization="Data In Motion"; \
+        organizationUrl="https://www.datainmotion.com"; \
+        roles="developer,architect",\
+    isalvadori; \
+        name="Ilenia Salvadori"; \
+        email="i.salvadori@datainmotion.com"; \
+        url="https://www.datainmotion.com"; \
+        organization="Data In Motion"; \
+        organizationUrl="https://www.datainmotion.com"; \
+        roles="developer",\
+    ggrune; \
+        name="Guido Grune"; \
+        email="g.grune@datainmotion.com"; \
+        url="https://www.datainmotion.com"; \
+        organization="Data In Motion"; \
+        organizationUrl="https://www.datainmotion.com"; \
+        roles="developer"
+
 -library: \
-	geckoDIMC,\
-	geckoOSGi-Test,\
-	geckoJacoco,\
-	geckoEMF,\
+	fennec,\
+	fennecTest,\
+	fennecEMF,\
 	geckoEMFUtil
 
 # Needed because we enabled library 'gecko-dimc'
 # Activate baselining
 dimcBaselining: false
 mavenCentral: true
-github-project: org.gecko.camel
+github-project: camel
 base-version: 1.0.0
 
 # Maven Central Group-Id
 # For Geckoprojects the groupid must start with org.geckoprojects
--groupid: org.geckoprojects.camel
+-groupid: org.eclipse.fennec.camel
 
-javac.source: 17
-javac.target: 17
+javac.source: 21
+javac.target: 21
 
--require-bnd "(version>=7.0.0)"
+required_bnd_version: ${versionmask;===;${bnd_version}}
+-require-bnd: "(version>=${required_bnd_version})"
 
 -jpms-module-info: 
 

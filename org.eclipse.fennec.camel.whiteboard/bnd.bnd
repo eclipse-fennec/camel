@@ -1,11 +1,10 @@
 src=${^src},src-gen
 
--library: \
-	enable-emf
+-library: enableEMF
 
 -generate:\
 	model/camel-pipeline.ecore;\
-		generate=geckoEMF;\
+		generate=fennecEMF;\
 		genmodel=model/camel-pipeline.genmodel;\
 		output=src-gen
 

@@ -3,7 +3,8 @@
 	com.fasterxml.jackson.core.jackson-databind;version=latest,\
 	com.fasterxml.jackson.core.jackson-core;version=latest,\
 	com.squareup.okhttp3;version=snapshot,\
-	io.minio;version=snapshot
+	io.minio;version=snapshot,\
+	osgi.annotation
 #	org.gecko.minio;version=snapshot
 
 Bundle-Name: Fennec MinIO Example

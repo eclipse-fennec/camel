@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 
 import org.eclipse.fennec.camel.camelspring.CamelSpringPackage;
 
-import org.gecko.emf.osgi.constants.EMFNamespaces;
+import org.eclipse.fennec.emf.osgi.constants.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->

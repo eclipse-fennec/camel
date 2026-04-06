@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EReference;
 
-import org.gecko.emf.osgi.annotation.provide.EPackage;
+import org.eclipse.fennec.emf.osgi.annotation.provide.EPackage;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -41,7 +41,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = AddressBookPackage.eNS_URI, genModel = "/model/addressbook.genmodel", genModelSourceLocations = {"model/addressbook.genmodel","org.eclipse.fennec.demo.model/model/addressbook.genmodel"}, ecore="/model/addressbook.ecore", ecoreSourceLocations="/model/addressbook.ecore")
+@EPackage(uri = AddressBookPackage.eNS_URI, genModel = "/model/addressbook.genmodel", genModelSourceLocations = {"model/addressbook.genmodel","org.eclipse.fennec.demo.model/model/addressbook.genmodel"}, ecore = "/model/addressbook.ecore", ecoreSourceLocations = "/model/addressbook.ecore")
 public interface AddressBookPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

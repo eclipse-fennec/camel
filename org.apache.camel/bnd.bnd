@@ -1,4 +1,4 @@
--library: enable-emf
+-library: enableEMF
 
 lib.version: 4.14
 
@@ -22,9 +22,9 @@ DynamicImport-Package: *
 	camel-core-languages;version=latest,\
 	camel-core-processor;version=latest,\
 	camel-direct,\
-	org.eclipse.fennec.demo.model;version=snapshot
-	
-	
+	org.eclipse.fennec.demo.model;version=snapshot,\
+	org.osgi.framework,\
+	org.osgi.service.component.annotations
 
 Bundle-Version: ${lib.version}.SNAPSHOT
 Bundle-Name: Fennec Camel Whiteboard

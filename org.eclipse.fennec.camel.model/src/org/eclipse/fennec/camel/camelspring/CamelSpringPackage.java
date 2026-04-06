@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EReference;
 
-import org.gecko.emf.osgi.annotation.provide.EPackage;
+import org.eclipse.fennec.emf.osgi.annotation.provide.EPackage;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -41,7 +41,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = CamelSpringPackage.eNS_URI, genModel = "/model/camel-spring.genmodel", genModelSourceLocations = {"model/camel-spring.genmodel","org.eclipse.fennec.camel.model/model/camel-spring.genmodel"}, ecore="/model/camel-spring.ecore", ecoreSourceLocations="/model/camel-spring.ecore")
+@EPackage(uri = CamelSpringPackage.eNS_URI, genModel = "/model/camel-spring.genmodel", genModelSourceLocations = {"model/camel-spring.genmodel","org.eclipse.fennec.camel.model/model/camel-spring.genmodel"}, ecore = "/model/camel-spring.ecore", ecoreSourceLocations = "/model/camel-spring.ecore")
 public interface CamelSpringPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

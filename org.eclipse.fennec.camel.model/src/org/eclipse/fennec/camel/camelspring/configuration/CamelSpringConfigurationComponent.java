@@ -27,11 +27,13 @@ import org.eclipse.fennec.camel.camelspring.impl.CamelSpringPackageImpl;
 
 import org.eclipse.fennec.camel.camelspring.util.CamelSpringResourceFactoryImpl;
 
-import org.gecko.emf.osgi.configurator.EPackageConfigurator;
+import org.eclipse.fennec.emf.osgi.configurator.EPackageConfigurator;
 
 import org.osgi.annotation.bundle.Capability;
 
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleException;
 import org.osgi.framework.ServiceRegistration;
 
 import org.osgi.service.component.annotations.Activate;
@@ -49,7 +51,7 @@ import org.osgi.service.condition.Condition;
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.eclipse.fennec.camel.camelspring.util.CamelSpringResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource$Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,org.eclipse.fennec.camel.camelspring.util\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.eclipse.fennec.camel.camelspring.CamelSpringFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,org.eclipse.fennec.camel.camelspring\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.eclipse.fennec.camel.camelspring.CamelSpringPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,org.eclipse.fennec.camel.camelspring\"" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,org.eclipse.fennec.camel.camelspring\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.eclipse.fennec.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,org.eclipse.fennec.camel.camelspring\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.osgi.service.condition.Condition\"" , "uses:=org.osgi.service.condition" })
 public class CamelSpringConfigurationComponent {
 	
@@ -66,12 +68,10 @@ public class CamelSpringConfigurationComponent {
 	 */
 	@Activate
 	public void activate(BundleContext ctx) {
+	
+		checkEMFEcore(ctx);
 		CamelSpringPackage ePackage = CamelSpringPackageImpl.eINSTANCE;
 		
-		// Intialize by is activated. This the package loads the included ecore of the package instead of having the generated code for the package.
-		// The references in the Literals interface are assigned lazy using the default registry. If The Bundle was stopped, the Component has been 
-		// deactivated and thus the model has been removed, but the Classes not unloaded. Long story short: If we don't do this, calls 
-		// on CamelSpringPackage references can cause NullPointerExceptions and a lot of questionmarks.
 		if(!EPackage.Registry.INSTANCE.containsKey(CamelSpringPackage.eNS_URI)){
 			EPackage.Registry.INSTANCE.put(CamelSpringPackage.eNS_URI, ePackage);
 		}
@@ -81,6 +81,27 @@ public class CamelSpringConfigurationComponent {
 		registerEPackageService(ePackage, packageConfigurator, ctx);
 		registerEFactoryService(ePackage, packageConfigurator, ctx);
 		registerConditionService(packageConfigurator, ctx);
+	}
+	
+	/**
+	 * We have to make sure that org.eclipse.emf.ecore is started, so we don't run 
+	 * into start order issues due to the use of static access in EMF 
+	 * @param ctx the {@link BundleContext} to use
+	 */
+	private void checkEMFEcore(BundleContext ctx) {
+		Bundle[] bundles = ctx.getBundles();
+		
+		for(Bundle bundle : bundles) {
+			if("org.eclipse.emf.ecore".equals(bundle.getSymbolicName())) {
+				try {
+					bundle.start();
+				} catch (BundleException e) {
+					System.err.println("Could not start Bundle org.eclipse.emf.ecore, something seems seriously wrong: " + e.getMessage());
+					e.printStackTrace();
+				}
+				break;
+			}
+		}
 	}
 	
 	/**

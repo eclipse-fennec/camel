@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EReference;
 
-import org.gecko.emf.osgi.annotation.provide.EPackage;
+import org.eclipse.fennec.emf.osgi.annotation.provide.EPackage;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -40,7 +40,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = PipelinePackage.eNS_URI, genModel = "/model/camel-pipeline.genmodel", genModelSourceLocations = {"model/camel-pipeline.genmodel","org.eclipse.fennec.camel.whiteboard/model/camel-pipeline.genmodel"}, ecore="/model/camel-pipeline.ecore", ecoreSourceLocations="/model/camel-pipeline.ecore")
+@EPackage(uri = PipelinePackage.eNS_URI, genModel = "/model/camel-pipeline.genmodel", genModelSourceLocations = {"model/camel-pipeline.genmodel","org.eclipse.fennec.camel.whiteboard/model/camel-pipeline.genmodel"}, ecore = "/model/camel-pipeline.ecore", ecoreSourceLocations = "/model/camel-pipeline.ecore")
 public interface PipelinePackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

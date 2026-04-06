@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.gecko.emf.osgi.annotation.require.RequireEMF;
+import org.eclipse.fennec.emf.osgi.annotation.require.RequireEMF;
 import org.osgi.service.component.annotations.Component;
 
 /**

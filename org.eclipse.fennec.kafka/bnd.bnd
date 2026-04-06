@@ -1,5 +1,4 @@
--library: \
-	enable-emf
+-library: enableEMF
 
 -buildpath: \
 	org.osgi.framework;version=latest,\
