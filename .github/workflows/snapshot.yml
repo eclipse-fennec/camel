@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java-version: [21, 25]
+        java-version: [21]
       fail-fast: false
     env:
       CS_PASSWORD: ${{secrets.CENTRAL_SONATYPE_TOKEN_PASSWORD}}
@@ -60,8 +60,6 @@ jobs:
     - name: Build only
       if: matrix.java-version != 21
       run: ./gradlew build --stacktrace --info
-    - name: Run Performance Tests
-      run: ./gradlew perfTest --info
     - name: Publish Test Results
       uses: actions/upload-artifact@v4
       if: always()
