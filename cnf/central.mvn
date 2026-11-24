@@ -228,10 +228,10 @@ org.bndtools:org.bndtools.templates.osgi:7.0.0
 
 com.fasterxml.jackson.core:jackson-annotations:2.21
 com.fasterxml.jackson.core:jackson-core:2.21.7
-com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.19.2
-com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.2
+com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.21.7
+com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.21.7
 com.fasterxml.jackson.core:jackson-databind:2.21.7
-com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.19.2
+com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.21.7
 tools.jackson.core:jackson-core:3.0.0-rc6
 tools.jackson.core:jackson-databind:3.0.0-rc6
 tools.jackson.dataformat:jackson-dataformat-properties:3.0.0-rc6
