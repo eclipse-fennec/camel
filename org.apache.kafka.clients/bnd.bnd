@@ -1,4 +1,4 @@
-lib.version: 3.8.0
+lib.version: 3.9.2
 
 -buildpath:  \
 	org.apache.kafka:kafka-clients;version=${lib.version}
