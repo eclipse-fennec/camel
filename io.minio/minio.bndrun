@@ -10,9 +10,6 @@
 	org.jetbrains.kotlin;version=snapshot,\
 	com.squareup.okhttp3;version=snapshot,\
 	com.squareup.okio;version='[3.16.0,3.16.1)',\
-	bcprov;version='[1.85.0,1.85.1)',\
-	bctls;version='[1.85.0,1.85.1)',\
-	bcutil;version='[1.85.0,1.85.1)',\
 	com.fasterxml.jackson.core.jackson-annotations;version='[2.21.0,2.21.1)',\
 	com.fasterxml.jackson.core.jackson-core;version='[2.21.7,2.21.8)',\
 	com.fasterxml.jackson.core.jackson-databind;version='[2.21.7,2.21.8)',\

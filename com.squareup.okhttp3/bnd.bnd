@@ -1,11 +1,13 @@
-okhttp.version: 4.12.0
+okhttp.version: 5.1.0
 
+# Since OkHttp 5 the com.squareup.okhttp3:okhttp artifact is only Kotlin
+# multiplatform metadata, the JVM classes are in okhttp-jvm.
 -buildpath:  \
-	com.squareup.okhttp3:okhttp;version=${okhttp.version}
+	com.squareup.okhttp3:okhttp-jvm;version=${okhttp.version}
 	
 -includeresource: \
-	OSGI-OPT/src=@${repo;com.squareup.okhttp3:okhttp:jar:sources;${okhttp.version};EXACT},\
-	@${repo;com.squareup.okhttp3:okhttp;${okhttp.version}}!/META-INF/*.json
+	OSGI-OPT/src=@${repo;com.squareup.okhttp3:okhttp-jvm:jar:sources;${okhttp.version};EXACT},\
+	@${repo;com.squareup.okhttp3:okhttp-jvm;${okhttp.version}}!/META-INF/*module
 
 Bundle-Version: ${okhttp.version}.SNAPSHOT
 Bundle-Name: OkHttp3 Re-packaged JAR
@@ -15,6 +17,9 @@ Export-Package: \
 Import-Package: \
 	org.openjsse*;'resolution:'=optional,\
 	org.conscrypt*;'resolution:'=optional,\
+	org.bouncycastle*;'resolution:'=optional,\
+	com.oracle.svm*;'resolution:'=optional,\
+	org.graalvm*;'resolution:'=optional,\
 	sun.*;'resolution:'=optional,\
 	android*;'resolution:'=optional,\
 	dalvik*;'resolution:'=optional,\
