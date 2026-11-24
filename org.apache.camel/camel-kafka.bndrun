@@ -1,5 +1,5 @@
 -runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
--runee: JavaSE-17
+-runee: JavaSE-21
 -runrequires: \
 	bnd.identity;id='org.apache.camel',\
 	bnd.identity;id='org.apache.felix.gogo.command',\
@@ -16,7 +16,6 @@
 	bnd.identity;id=camel-kafka
 -runbundles: \
 	jakarta.activation-api;version='[2.1.1,2.1.2)',\
-	jakarta.xml.bind-api;version='[4.0.0,4.0.1)',\
 	org.apache.aries.spifly.dynamic.framework.extension;version='[1.3.7,1.3.8)',\
 	slf4j.api;version='[2.0.17,2.0.18)',\
 	slf4j.simple;version='[2.0.17,2.0.18)',\
@@ -52,37 +51,19 @@
 	camel-health;version='[4.10.5,4.10.6)',\
 	camel-kafka;version='[4.10.5,4.10.6)',\
 	com.github.luben.zstd-jni;version='[1.5.7,1.5.8)',\
-	lz4-java;version='[1.8.0,1.8.1)',\
 	org.apache.kafka.clients;version=snapshot,\
 	org.xerial.snappy.snappy-java;version='[1.1.10,1.1.11)',\
-	org.eclipse.emf.common;version='[2.29.0,2.29.1)',\
-	org.eclipse.emf.ecore;version='[2.35.0,2.35.1)',\
 	org.apache.camel;version=snapshot,\
-	org.eclipse.emf.ecore.xmi;version='[2.36.0,2.36.1)',\
-	org.gecko.emf.osgi.component.minimal;version='[6.1.3,6.1.4)',\
 	org.osgi.service.cm;version='[1.6.1,1.6.2)',\
 	org.osgi.util.converter;version='[1.0.9,1.0.10)',\
-	com.fasterxml.jackson.core.jackson-annotations;version='[2.19.2,2.19.3)',\
-	com.fasterxml.jackson.core.jackson-core;version='[2.19.2,2.19.3)',\
-	com.fasterxml.jackson.core.jackson-databind;version='[2.19.2,2.19.3)',\
-	junit-jupiter-api;version='[5.10.3,5.10.4)',\
-	junit-jupiter-params;version='[5.10.3,5.10.4)',\
-	junit-platform-commons;version='[1.10.3,1.10.4)',\
-	org.apache.aries.component-dsl.component-dsl;version='[1.2.3,1.2.4)',\
-	org.apache.aries.typedevent.bus;version='[1.1.0,1.1.1)',\
-	org.apache.felix.configadmin;version='[1.9.26,1.9.27)',\
-	org.eclipse.fennec.ecowitt.model;version='[1.0.0,1.0.1)',\
-	org.eclipse.sensinact.gateway.core.annotation;version='[0.0.2,0.0.3)',\
-	org.eclipse.sensinact.gateway.core.api;version='[0.0.2,0.0.3)',\
-	org.eclipse.sensinact.gateway.core.emf-api;version='[0.0.2,0.0.3)',\
-	org.eclipse.sensinact.gateway.core.geo-json;version='[0.0.2,0.0.3)',\
-	org.eclipse.sensinact.gateway.core.models.provider;version='[0.0.2,0.0.3)',\
-	org.gecko.emf.sensinact.model;version='[1.0.0,1.0.1)',\
-	org.gecko.emf.sensinact.tests;version='[1.0.0,1.0.1)',\
-	org.gecko.weather.model;version='[1.1.0,1.1.1)',\
-	org.opentest4j;version='[1.3.0,1.3.1)',\
-	org.osgi.service.typedevent;version='[1.1.0,1.1.1)',\
-	org.osgi.test.common;version='[1.3.0,1.3.1)',\
-	org.osgi.test.junit5;version='[1.3.0,1.3.1)',\
-	org.osgi.util.pushstream;version='[1.1.0,1.1.1)'
+	com.fasterxml.jackson.core.jackson-annotations;version='[2.21.0,2.21.1)',\
+	com.fasterxml.jackson.core.jackson-core;version='[2.21.7,2.21.8)',\
+	com.fasterxml.jackson.core.jackson-databind;version='[2.21.7,2.21.8)',\
+	jakarta.xml.bind-api;version='[4.0.2,4.0.3)',\
+	lz4-java;version='[1.11.4,1.11.5)',\
+	org.eclipse.emf.common;version='[2.44.0,2.44.1)',\
+	org.eclipse.emf.ecore;version='[2.41.0,2.41.1)',\
+	org.eclipse.emf.ecore.xmi;version='[2.39.0,2.39.1)',\
+	org.eclipse.fennec.demo.model;version=snapshot,\
+	org.eclipse.fennec.emf.osgi.component.minimal;version='[0.1.2,0.1.3)'
 -runblacklist: bnd.identity;id='org.apache.servicemix.bundles.kafka-clients'
