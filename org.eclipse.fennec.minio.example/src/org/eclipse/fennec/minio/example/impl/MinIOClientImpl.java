@@ -29,7 +29,6 @@ import org.slf4j.LoggerFactory;
 
 import io.minio.BucketExistsArgs;
 import io.minio.GetObjectArgs;
-import io.minio.ListBucketsArgs;
 import io.minio.ListObjectsArgs;
 import io.minio.MakeBucketArgs;
 import io.minio.MinioClient;
@@ -92,7 +91,7 @@ public class MinIOClientImpl implements MinIOClient {
 
 	@Override
 	public List<Bucket> listBuckets() throws Exception {
-		return minioClient.listBuckets(ListBucketsArgs.builder().build());
+		return minioClient.listBuckets();
 	}
 
 	@Override

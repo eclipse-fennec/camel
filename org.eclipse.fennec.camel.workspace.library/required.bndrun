@@ -64,9 +64,6 @@
 	org.xerial.snappy.snappy-java;version='[1.1.10,1.1.11)',\
 	slf4j.api;version='[2.0.17,2.0.18)',\
 	slf4j.simple;version='[2.0.17,2.0.18)',\
-	bcprov;version='[1.85.0,1.85.1)',\
-	bctls;version='[1.85.0,1.85.1)',\
-	bcutil;version='[1.85.0,1.85.1)',\
 	camel-minio;version='[4.10.5,4.10.6)',\
 	com.google.guava;version='[33.7.2,33.7.3)',\
 	com.google.guava.failureaccess;version='[1.0.3,1.0.4)',\
