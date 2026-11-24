@@ -239,6 +239,7 @@ tools.jackson.dataformat:jackson-dataformat-yaml:3.0.0-rc6
 
 io.dropwizard.metrics:metrics-core:4.2.33
 org.apache.aries.typedevent:org.apache.aries.typedevent.bus:1.0.1
+org.apache.aries.component-dsl:org.apache.aries.component-dsl.component-dsl:1.2.2
 
 org.apache.kafka:kafka-clients:3.8.0
 org.apache.kafka:kafka-clients:jar:sources:3.8.0
