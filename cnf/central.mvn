@@ -245,8 +245,8 @@ org.apache.kafka:kafka-clients:3.9.2
 org.apache.kafka:kafka-clients:jar:sources:3.9.2
 com.github.luben:zstd-jni:1.5.7-4
 org.xerial.snappy:snappy-java:1.1.10.9
-# org.lz4:lz4-java moved to at.yawk.lz4; 1.10.4 is the first release of it that is an OSGi bundle
-at.yawk.lz4:lz4-java:1.10.4
+# org.lz4:lz4-java moved to at.yawk.lz4; 1.10.4 is the first OSGi bundle of it, 1.11.4 fixes CVE-2026-106451
+at.yawk.lz4:lz4-java:1.11.4
 org.apache.servicemix.bundles:org.apache.servicemix.bundles.kafka-clients:3.9.1_1
 #org.apache.servicemix.specs:org.apache.servicemix.specs.jsr339-api-2.1:2.9.0
 

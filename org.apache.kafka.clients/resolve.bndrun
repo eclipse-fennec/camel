@@ -11,4 +11,4 @@
 	com.fasterxml.jackson.core.jackson-annotations;version='[2.21.0,2.21.1)',\
 	com.fasterxml.jackson.core.jackson-core;version='[2.21.7,2.21.8)',\
 	com.fasterxml.jackson.core.jackson-databind;version='[2.21.7,2.21.8)',\
-	lz4-java;version='[1.10.4,1.10.5)'
+	lz4-java;version='[1.11.4,1.11.5)'
